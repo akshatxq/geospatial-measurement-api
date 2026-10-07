@@ -187,9 +187,17 @@ The projected/reference discrepancy was about 0.08% in these two examples. It is
 
 Tests generate Shapefiles and KML locally with temporary databases, with no network requirement. A synthetic 1,000 × 1,000 metre square in EPSG:32643 is transformed to WGS84 and uploaded as KML; the area must match 1,000,000 m² at a relative tolerance of `1e-7`. This tight tolerance checks the transformation round trip into the same UTM zone; it does not claim that all real-world measurements have that accuracy. Tests also check known length, holes, multipart sums, southern UTM, feet, invalid shapes, malformed input, upload limits, pagination and persistence.
 
-Manual Google Earth comparison has not been performed. To do it: draw a polygon and path in Google Earth, record its displayed measurement and unit, export KML (extract KML first for KMZ), then upload those actual files. Compare `abs(api - reference) / reference * 100` in matching units. Published pitch dimensions are nominal references, distinct from Google Earth's displayed value and manually traced boundaries.
+A polygon named **Khelgaon open ground**, in Ranchi, was drawn in Google Earth Web, exported as KML and manually uploaded through the API's Swagger interface. The comparison below uses Google Earth's displayed area from the measurement screenshot and the API response for that exported polygon.
 
-<!-- TODO(me): Record an actual Google Earth comparison if performed. -->
+![Khelgaon open ground polygon in Google Earth Web, showing an area of 12,497.63 square metres](docs/screenshots/khelgaon-area.png)
+
+| Shape | Google Earth area | API area | Absolute difference | Difference |
+| --- | ---: | ---: | ---: | ---: |
+| Khelgaon open ground | 12,497.63 m² | 12,466.40 m² | 31.23 m² | 0.2499% |
+
+Percentage difference is `abs(api - Google Earth) / Google Earth * 100`, calculated using the unrounded API value of 12,466.403678698167 m². The API selected EPSG:32645 (UTM zone 45N) and reported a valid Polygon. An independent WGS84 geodesic calculation using the returned coordinates gave 12,468.07 m², approximately 0.0134% different from the projected API result. The cause of the remaining difference from Google Earth's displayed value has not been established.
+
+This is a comparison for one manually traced shape, not a surveyed boundary or a general accuracy guarantee. Google Earth's displayed perimeter was 463.19 m; polygon perimeter is not returned by this API and was not compared. A real Google Earth path comparison has not been performed; length is covered by the automated known-value tests.
 
 ## Limitations
 
