@@ -197,9 +197,7 @@ No authentication, spatial queries, queue, global/polar measurement support, geo
 
 ## Learning
 
-Topics demonstrated by this implementation include selecting a projected CRS, keeping longitude/easting axis order consistent, handling multipart geometry and holes, bounding untrusted file input, and storing related records atomically.
-
-<!-- TODO(me): Add 3–5 sentences describing what I personally learned after reviewing and running the project. -->
+The main lesson from this project is that a measurement needs context: a number can look reasonable and still be wrong if the coordinates are in degrees or the wrong projection is used. The same-sized rectangle in latitude and longitude covers different areas at different latitudes, which makes CRS handling part of the calculation itself. File handling also goes beyond checking the extension—a Shapefile needs matching components and a known CRS, while a ZIP needs checks before its contents are read. Invalid geometry should stay visible with a useful explanation, so one bad feature does not hide the results for the rest of the file. The known-size square and line tests provide a concrete way to check the calculations instead of relying on whether the output looks plausible.
 
 ## Future scope
 
