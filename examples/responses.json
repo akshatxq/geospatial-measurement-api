@@ -1,0 +1,137 @@
+{
+  "upload": {
+    "id": "f0f5e3a5-5224-4b3e-aca6-801a168f8601",
+    "filename": "survey.kml",
+    "feature_count": 3,
+    "crs": "EPSG:4326",
+    "crs_assumed": false,
+    "status": "COMPLETED",
+    "error": null
+  },
+  "file_info": {
+    "id": "f0f5e3a5-5224-4b3e-aca6-801a168f8601",
+    "filename": "survey.kml",
+    "feature_count": 3,
+    "crs": "EPSG:4326",
+    "crs_assumed": false,
+    "status": "COMPLETED",
+    "error": null
+  },
+  "measurements": {
+    "file_id": "f0f5e3a5-5224-4b3e-aca6-801a168f8601",
+    "total": 3,
+    "page": 1,
+    "page_size": 100,
+    "summary": {
+      "measured": 2,
+      "not_applicable": 1,
+      "unsupported": 0,
+      "failed": 0,
+      "total_area_m2": 11575.57924440529,
+      "total_length_m": 104.60522747965324
+    },
+    "features": [
+      {
+        "index": 0,
+        "feature_id": "park",
+        "geometry_type": "Polygon",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                75.0,
+                20.0
+              ],
+              [
+                75.001,
+                20.0
+              ],
+              [
+                75.001,
+                20.001
+              ],
+              [
+                75.0,
+                20.001
+              ],
+              [
+                75.0,
+                20.0
+              ]
+            ]
+          ]
+        },
+        "crs": "EPSG:4326",
+        "properties": {
+          "name": "Example park"
+        },
+        "status": "MEASURED",
+        "measurement": {
+          "type": "AREA",
+          "value": 11575.57924440529,
+          "unit": "m2",
+          "projected_crs": "EPSG:32643",
+          "method": "projected_utm"
+        },
+        "reason": null,
+        "warnings": [],
+        "is_valid": true
+      },
+      {
+        "index": 1,
+        "feature_id": "path",
+        "geometry_type": "LineString",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              75.0,
+              20.0
+            ],
+            [
+              75.001,
+              20.0
+            ]
+          ]
+        },
+        "crs": "EPSG:4326",
+        "properties": {
+          "name": "Example path"
+        },
+        "status": "MEASURED",
+        "measurement": {
+          "type": "LENGTH",
+          "value": 104.60522747965324,
+          "unit": "m",
+          "projected_crs": "EPSG:32643",
+          "method": "projected_utm"
+        },
+        "reason": null,
+        "warnings": [],
+        "is_valid": true
+      },
+      {
+        "index": 2,
+        "feature_id": "marker",
+        "geometry_type": "Point",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            75.0,
+            20.0
+          ]
+        },
+        "crs": "EPSG:4326",
+        "properties": {
+          "name": "Example marker"
+        },
+        "status": "NOT_APPLICABLE",
+        "measurement": null,
+        "reason": "Points have no area or length.",
+        "warnings": [],
+        "is_valid": true
+      }
+    ]
+  }
+}

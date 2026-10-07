@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark id="park"><name>Example park</name>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>
+        75,20 75.001,20 75.001,20.001 75,20.001 75,20
+      </coordinates></LinearRing></outerBoundaryIs></Polygon>
+    </Placemark>
+    <Placemark id="path"><name>Example path</name>
+      <LineString><coordinates>75,20 75.001,20</coordinates></LineString>
+    </Placemark>
+    <Placemark id="marker"><name>Example marker</name>
+      <Point><coordinates>75,20</coordinates></Point>
+    </Placemark>
+  </Document>
+</kml>
